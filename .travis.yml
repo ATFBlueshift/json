@@ -4,6 +4,8 @@
 
 # C++ project
 language: cpp
+
+dist: trusty
 sudo: false
 
 
@@ -34,6 +36,13 @@ matrix:
     addons: &gcc49
       apt:
         packages: ["g++-4.9", "g++-4.9-multilib", "libc6-dbg", "libc6-dbg:i386"]
+        sources: *apt_sources
+
+  # Clang 3.9
+  - env: COMPILER=clang++-3.9
+    addons: &clang39
+      apt:
+        packages: ["clang-3.9", "g++-multilib", "libc6-dbg", "libc6-dbg:i386", "g++-6"]
         sources: *apt_sources
 
   - os: osx
