@@ -39,10 +39,11 @@ matrix:
         sources: *apt_sources
 
   # Clang 3.9
-  - env: COMPILER=clang++-3.9
+  - os: linux
+    env: COMPILER=clang++-3.9
     addons: &clang39
       apt:
-        packages: ["clang-3.9", "g++-multilib", "libc6-dbg", "libc6-dbg:i386", "g++-6"]
+        packages: ["clang-3.9", "g++-multilib", "libc6-dbg:i386", "g++-6"]
         sources: *apt_sources
 
   - os: osx
